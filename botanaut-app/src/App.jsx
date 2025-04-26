@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import './theme.css';
 import Landing from './pages/Landing';
 import Home from './pages/Home';
-import About from './pages/About';
+import Ecoswap from './pages/Ecoswap';
 import Planet from './pages/Planet';
 import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,7 +17,7 @@ function AppLayout() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/ecoswap" element={<Ecoswap />} />
         <Route path="/planet" element={<Planet />} />
       </Routes>
     </>

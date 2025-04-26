@@ -10,7 +10,9 @@ export default function Landing() {
 
   return (
     <div className="bg-brand-primary">
+      <div className="landing-logo">
       <Logo />
+      </div>
       <div className="landing-content">
       <TypeIt as="p" options={{ speed: 20, cursor: false }}>
           [Accessing Earth Status Report…]
