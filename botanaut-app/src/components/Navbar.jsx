@@ -12,15 +12,14 @@ export default function Navbar() {
 
   return (
     <nav className="nav-bar-container">
-      {/* Logo on the left */}
+      
       <div className="navbar-logo">
         <Link to="/">
           <img src="/images/logo.svg" alt="EcoNova Logo" />
         </Link>
       </div>
 
-      {/* Nav links on the right */}
-      <Nav as="ul" className="nav-bar justify-content-end">
+      <Nav as="ul" className="nav-bar">
         {navItems.map((item) => (
           <Nav.Item as="li" key={item.href}>
             <Link

@@ -1,24 +1,43 @@
+import { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export default function Home() {
-    return (
-      <Container>
-      <Row>
-        <Col>
-          <img className="HomeLogo" src="/images/logo.svg"/>
-        </Col>
-        <Col>
-          <img className="nova1" src="/images/nova-1.svg"/>
-        </Col>
-      </Row>
-      <Row>
-        <div style={{width: '50%', height: '100%', background: 'white', boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', borderRadius: 100}}>Greetings Cadet</div>
-      </Row>
-      <Row className="page1">
-        <Col>Join NOVA and the Galactic Greening Initiative on a mission to revive forgotten planets—by making sustainable swaps right here on Earth.</Col>
-      </Row>
-    </Container>
-    );
-  }
+  useEffect(() => {
+    document.body.style.backgroundImage = 'url("/images/NOVA-background-2.svg")';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundRepeat = 'no-repeat';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundAttachment = 'scroll';
+  }, []);
+
+  return (
+    <div className="home-page">
+      <Container className="text-center">
+        <Row className="align-items-center mt-5 pt-5">
+          <Col>
+            <img className="logo" src="/images/logo.svg" alt="EcoNova Logo" />
+          </Col>
+          <Col>
+            <img className="nova-image" src="/images/nova-1.svg" alt="NOVA Avatar" />
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center mt-4">
+          <div className="greeting-box">
+            Greetings, Cadet
+          </div>
+        </Row>
+
+        <Row className="justify-content-center mt-5">
+          <Col md={8}>
+            <p className="mission-text">
+              Join NOVA and the Galactic Greening Initiative on a mission to revive forgotten planets — by making sustainable swaps right here on Earth.
+            </p>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+}
