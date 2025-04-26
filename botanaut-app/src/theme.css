@@ -1,210 +1,151 @@
+/* Global settings */
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
-  }
+}
 
+/* Fonts */
 @font-face {
   font-family: "Space-Age";
   src: url("/fonts/space age.ttf") format("truetype");
 }
-  
 @font-face {
   font-family: "SpaceMono";
   src: url("/fonts/SpaceMono-Regular.ttf") format("truetype");
 }
-  
 @font-face {
   font-family: "SpaceMono-Bold";
   src: url("/fonts/SpaceMono-Bold.ttf") format("truetype");
-} 
-
-:root {
-    --brand-primary: #201e4B;
-    --brand-secondary: #D4A3E2;
-    --brand-tertiary: #C6E7A3;
-    --text-color: white;
-    --background-color: #f5f5f5;
-    --outline-secondary:var(--brand-tertiary);
 }
 
+/* Color Variables */
+:root {
+  --brand-primary: #201e4B;
+  --brand-secondary: #D4A3E2;
+  --brand-tertiary: #C6E7A3;
+  --text-color: white;
+  --background-color: #f5f5f5;
+  --outline-secondary: var(--brand-tertiary);
+}
+
+/* Base body styling */
 body {
-  background-color: #f5f5f5;
+  background-color: var(--background-color);
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
-.bg-brand-primary {
-  background-color: black;
-  color: var(--brand-tertiary);
+/* Utility classes */
+.font-spacemono {
   font-family: "SpaceMono";
-  min-height: 100vh;
+}
+
+/* Navbar */
+.nav-bar-container {
+  position: relative;
   width: 100%;
-  padding: 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(36, 45, 68, 0.8) 0%,
+    rgba(36, 45, 68, 0.5) 50%,
+    rgba(36, 45, 68, 0) 100%
+  );
+  padding: 1rem 5% 2rem 5%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  position: relative;
-
+  justify-content: space-between;
+  z-index: 10;
+  backdrop-filter: blur(6px);
 }
-  
-  .type-container {
-    width: 100%;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    min-height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .home {
-    font-family: "SpaceMono";
-    color: var(--brand-tertiary);
-    padding: 3rem;
-  }
-
-  .home-page {
-    min-height: 100vh;
-    background-color: transparent;
-  }
-
-
-  .logo {
-    width: 80%;
-    max-width: 300px;
-  }
-  
-  .nova-image {
-    width: 80%;
-    max-width: 300px;
-  }
-  
-  .greeting-box {
-    width: 70%;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 50px;
-    padding: 2rem;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  
-  .mission-text {
-    font-size: 1.2rem;
-    font-family: "SpaceMono";
-    color: var(--brand-tertiary);
-    text-align: center;
-  }
-
-  .nav-bar-container {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(
-      to bottom,
-      rgba(36, 45, 68, 0.8) 0%, 
-      rgba(36, 45, 68, 0.5) 50%, 
-      rgba(36, 45, 68, 0) 100%
-    );
-    padding: 1rem 5% 2rem 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 10;
-  }
-  
-.navbar-logo img {
-    height: 90px;
-    margin-left: 75px;
-    width: auto;
-    display: block;
+.navbar-logo img, .logo-corner img {
+  height: 90px;
+  width: auto;
+  display: block;
 }
-  
+
 .nav-bar {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-  
+
 .custom-link {
-    color: var(--text-color);
-    font-family: "SpaceMono";
-    font-size: 1.4rem;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 4px;
-    transition: color 0.2s ease;
-}
-  
-  .custom-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background-color: var(--brand-secondary);
-    transition: width 0.3s ease;
-  }
-  
-  .custom-link:hover {
-    color: var(--brand-secondary);
-  }
-  
-  .custom-link:hover::after,
-  .custom-link.active::after {
-    width: 100%;
-  }
-
-.logo-corner {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1000;
-}
-  
-.logo-corner img {
-    height: 90px;
-    width: auto;
-    margin-left: 420px;
-    margin-top: 100px;
-    display: block;
+  color: var(--text-color);
+  font-family: "SpaceMono";
+  font-size: 1.4rem;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
 }
 
+.custom-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-secondary);
+  transition: width 0.3s ease;
+}
+
+.custom-link:hover {
+  color: var(--brand-secondary);
+}
+
+.custom-link:hover::after,
+.custom-link.active::after {
+  width: 100%;
+}
+
+/* Home Page */
+.home-page {
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.logo {
+  width: 80%;
+  max-width: 300px;
+}
+
+.nova-image {
+  width: 80%;
+  max-width: 300px;
+}
+
+.greeting-box {
+  width: 70%;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  padding: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.mission-text {
+  font-size: 1.2rem;
+  font-family: "SpaceMono";
+  color: var(--brand-tertiary);
+  text-align: center;
+}
+
+/* Landing Page */
 .landing-content {
   padding: 50px;
   max-width: 1000px;
   text-align: left;
 }
 
-.HomeLogo {
-  height: 300px;
-  width: auto;
-  display: flex;
-  padding-left: 75px;
-}
-
-.nova1 {
-  width: 700px;
-  height: 815px;
-  flex-shrink: 0;
-  aspect-ratio: 384/427;
-}
-
-.page1 {
-  font-family: "SpaceMono";
-  padding-top: 100px;
-  padding-bottom: 200px;
-  text-align: center;
-  font-size: 40px;
-}
-
+/* Ecoswap Page */
 .ecoswap-bg {
   background-image: url(/images/ecoswap.svg);
   background-size: cover;
@@ -220,4 +161,13 @@ body {
   color: var(--text-color);
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Generic page section */
+.page1 {
+  font-family: "SpaceMono";
+  padding-top: 100px;
+  padding-bottom: 200px;
+  text-align: center;
+  font-size: 40px;
 }
