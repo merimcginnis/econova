@@ -8,12 +8,8 @@ import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function AppLayout() {
-  const location = useLocation();
-  const isLanding = location.pathname === '/';
-
   return (
-    <>
-      {!isLanding && <Navbar />}
+    <> 
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
